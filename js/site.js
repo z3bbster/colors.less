@@ -1,4 +1,5 @@
 window.onload = function() {
+  localStorage.clear();
 	picker = new Color.Picker({
 		color: "#FD00FF", // accepts rgba(), or #hex
 		display: true,
@@ -10,6 +11,4 @@ window.onload = function() {
       });
 		}
 	});
-//	picker.element.style.top = swatch.offsetTop + "px";
-//	picker.element.style.left = (swatch.offsetLeft - 285) + "px";
 };
