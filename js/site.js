@@ -1,5 +1,4 @@
 window.onload = function() {
-	var baseColor;
 	picker = new Color.Picker({
 		color: "#FD00FF", // accepts rgba(), or #hex
 		display: true,
