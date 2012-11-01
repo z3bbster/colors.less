@@ -34,13 +34,14 @@ section {
   margin-bottom: 100px;
   &#demo {
     height: 400px;
-    margin-top: 140px;
+    h2 {margin-bottom: 260px;}
   }
 }
 
 #ColorPicker {
-  left: 820px;
-  top: 705px;
+  left: 50%;
+  margin-left: -140px;
+  top: 335px;
 }
 
 figure {
@@ -50,6 +51,24 @@ figure {
   figcaption {display: inline-block;}
   form, input {display: inline;}
   &.no-params figcaption {margin-bottom: 6px;}
+}
+
+code {
+  &.block {
+    background-color: #393939;
+    border-radius: 8px;
+    color: #EBE7E3;
+    display: block;
+    padding: 10px 24px;
+    white-space: pre-wrap;
+    .var {color: #D9DBF2;}
+    .value {color: #80AAC6;}
+    .comment {
+      color: #797979;
+      font-style: italic;
+    }
+    .fn {color: #DC5F32;}
+  }
 }
 
 .scheme {

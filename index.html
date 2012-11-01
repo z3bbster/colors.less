@@ -18,8 +18,8 @@
     <nav>
       <ul>
         <li><a href="#intro">Introduction</a></li>
-        <li><a href="#docs">Documentation</a></li>
         <li><a href="#demo">Demo</a></li>
+        <li><a href="#docs">Documentation</a></li>
         <li><a href="https://github.com/downloads/jking90/colors.less/colors.less">Download</a></li>
         <li><a href="https://github.com/jking90/colors.less">View on github</a></li>
       </ul>
@@ -31,32 +31,8 @@
         <h1>colors.less</h1>
         <h2>Create color schemes with LESS</h2>
         <p>I like to use formulaic color schemes in my web development sometimes, but generating them with tools like <a href="https://kuler.adobe.com/">kuler</a> is not very maintainable. So I decided to write some LESS color formulas to generate some of the most common color schemes, and share it with you.</p>
-      </section>
+      </section><!-- end #intro -->
       
-      <section id="docs">
-        <h2>Documentation</h2>
-
-        <h3>Scope:</h3>
-        <p>Create the following color schemes</p>
-        <ul>
-          <li>Shades</li>
-          <li>Analgous</li>
-          <li>Complementary</li>
-          <li>Split Complementary</li>
-          <li>Clash</li>
-          <li>Triadic</li>
-          <li>Tetradic</li>
-          <li>Five tone</li>
-          <li>Six tone</li>
-        </ul>
-        
-        <h3>Usage</h3>
-        <p>Each color scheme takes two parameters, <code>@baseColor</code> and <code>@difference</code>, <code>@distance</code>, or <code>@angle</code>. Except for the complimentary scheme, which only takes <code>@baseColor</code>.</p>
-        
-        <h3>Dependancies</h3>
-        <p>The only dependancy is <a href="http://lesscss.org/">LESS</a>.
-      </section>
-            
       <section id="demo">
         <h2>Demo</h2>
         <figure>
@@ -172,8 +148,102 @@
             <li class="color six"></li>
           </ul>
         </figure>
-      </section><!-- end .demo -->
+      </section><!-- end #demo -->
       
+      <section id="docs">
+        <h2>Documentation</h2>
+
+        <h3>Scope:</h3>
+        <p>Create the following color schemes</p>
+        <ul>
+          <li>Shades</li>
+          <li>Analgous</li>
+          <li>Complementary</li>
+          <li>Split Complementary</li>
+          <li>Clash</li>
+          <li>Triadic</li>
+          <li>Tetradic</li>
+          <li>Five tone</li>
+          <li>Six tone</li>
+        </ul>
+        
+        <h3>Usage</h3>
+        <p>Each color scheme takes two parameters, <code>@baseColor</code> and <code>@difference</code>, <code>@distance</code>, or <code>@angle</code>. Except for the complimentary scheme, which only takes <code>@baseColor</code>.</p>
+        
+        <h3>The Code</h3>
+        <code class="block">
+<span class="var">@baseColor</span>: <span class="value">#FD00FF</span>;
+
+<span class="comment">// Shades</span>
+  <span class="var">@difference</span>: <span class="value">10%</span>; <span class="comment">// Difference (in perecent) between each shade</span>
+  <span class="var">@shade1</span>: <span class="fn">lighten</span>(<span class="var">@baseColor</span>, (<span class="var">@difference</span> * <span class="value">2</span>));
+  <span class="var">@shade2</span>: <span class="fn">lighten</span>(<span class="var">@baseColor</span>, <span class="var">@difference</span>);
+  <span class="var">@shade3</span>: <span class="var">@baseColor</span>;
+  <span class="var">@shade4</span>: <span class="fn">darken</span>(<span class="var">@baseColor</span>, <span class="var">@difference</span>);
+  <span class="var">@shade5</span>: <span class="fn">darken</span>(<span class="var">@baseColor</span>, (<span class="var">@difference</span> * <span class="value">2</span>));
+    
+<span class="comment">// Analgous</span>
+  <span class="var">@distance1</span>: <span class="value">10</span>; <span class="comment">// Degrees between each analgous color</span>
+  <span class="var">@analgous1</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="var">@distance1</span> * <span class="value">2</span>));
+  <span class="var">@analgous2</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, <span class="var">@distance1</span>);
+  <span class="var">@analgous3</span>: <span class="var">@baseColor</span>;
+  <span class="var">@analgous4</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="var">@distance1</span> * <span class="value">-1</span>));
+  <span class="var">@analgous5</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="var">@distance1</span> * <span class="value">-2</span>));
+
+<span class="comment">// Complementary</span>
+  <span class="var">@complementary1</span>: <span class="var">@baseColor</span>;
+  <span class="var">@complementary2</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, <span class="value">180</span>);
+
+<span class="comment">// Split Complementary</span>
+  <span class="var">@distance2</span>: <span class="value">80</span>; <span class="comment">// Degrees between the two complementary colors</span>
+  <span class="var">@splitComp1</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, ((360 - <span class="var">@distance2</span>) / <span class="value">2</span>));
+  <span class="var">@splitComp2</span>: <span class="var">@baseColor</span>;
+  <span class="var">@splitComp3</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (((360 - <span class="var">@distance2</span>) / <span class="value">2</span>) * <span class="value">-1</span>));
+
+<span class="comment">// Clash</span>
+  <span class="var">@angle</span>: <span class="value">45</span>; <span class="comment">// Angle formed at base of isosceles triangle</span>
+  <span class="var">@clash1</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="var">@angle</span> * <span class="value">-2</span>));
+  <span class="var">@clash2</span>: <span class="var">@baseColor</span>;
+  <span class="var">@clash3</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="var">@angle</span> * <span class="value">2</span>));
+  
+<span class="comment">// Triadic</span>
+  <span class="var">@distance3</span>: <span class="value">120</span>; <span class="comment">// Degrees between the two new colors</span>
+  <span class="var">@triad1</span>: <span class="var">@baseColor</span>;
+  <span class="var">@triad2</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="value">180</span> - (<span class="var">@distance3</span> * <span class="value">0.5</span>)));
+  <span class="var">@triad3</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="value">180</span> + (<span class="var">@distance3</span> * <span class="value">0.5</span>)));
+  
+<span class="comment">// Tetradic</span>
+  <span class="var">@distance4</span>: <span class="value">90</span>; <span class="comment">// Degrees between two closest colors</span>
+  <span class="var">@tetrad1</span>: <span class="var">@baseColor</span>;
+  <span class="var">@tetrad2</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, <span class="var">@distance4</span>);
+  <span class="var">@tetrad3</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, <span class="value">180</span>);
+  <span class="var">@tetrad4</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="value">180</span> + <span class="var">@distance4</span>));
+  
+<span class="comment">// Five tone</span>
+  <span class="var">@distance5</span>: <span class="value">30</span>; <span class="comment">// Degrees between the 4 analgous colors</span>
+  <span class="var">@5tone1</span>: <span class="var">@baseColor</span>;
+  <span class="var">@5tone2</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="value">180</span> - (<span class="var">@distance5</span> * <span class="value">1.5</span>)));
+  <span class="var">@5tone3</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="value">180</span> - (<span class="var">@distance5</span> * <span class="value">0.5</span>)));
+  <span class="var">@5tone4</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="value">180</span> + (<span class="var">@distance5</span> * <span class="value">0.5</span>)));
+  <span class="var">@5tone5</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="value">180</span> + (<span class="var">@distance5</span> * <span class="value">1.5</span>)));
+  
+<span class="comment">// Six tone</span>
+  <span class="var">@distance6</span>: <span class="value">20</span>; <span class="comment">// Distance between the colors of each analgous pair</span>
+  <span class="comment">// Pair 1</span>
+  <span class="var">@6tone1</span>: <span class="var">@baseColor</span>;
+  <span class="var">@6tone2</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, <span class="var">@distance6</span>);
+  <span class="comment">// Pair 2</span>
+  <span class="var">@6tone3</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="value">120</span> - (<span class="var">@distance6</span> * <span class="value">0.5</span>)));
+  <span class="var">@6tone4</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="value">120</span> + (<span class="var">@distance6</span> * <span class="value">0.5</span>)));
+  <span class="comment">// Pair 3</span>
+  <span class="var">@6tone5</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="value">-120</span> + (<span class="var">@distance6</span> * <span class="value">0.5</span>)));
+  <span class="var">@6tone6</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="value">-120</span> - (<span class="var">@distance6</span> * <span class="value">0.5</span>)));
+        </code>
+        
+        <h3>Dependancies</h3>
+        <p>The only dependancy is <a href="http://lesscss.org/">LESS</a>.</p>
+      </section><!-- end #docs -->
+                  
     </div><!-- end .wrapper -->    
   </body>
 </html>
