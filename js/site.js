@@ -4,7 +4,7 @@ window.onload = function() {
 		display: true,
 		size: 200,
 		callback: function(rgba, state, type) {
-			baseColor = Color.Space(rgba, "RGBA>W3");
+			var baseColor = Color.Space(rgba, "RGBA>W3");
 			less.modifyVars({
         '@baseColor': baseColor
       });
