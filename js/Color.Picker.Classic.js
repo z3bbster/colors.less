@@ -6,16 +6,6 @@
 	----------------------------------------------------
 	Firefox 2+, Safari 3+, Opera 9+, Google Chrome, IE9+
 	----------------------------------------------------
-	picker = new Color.Picker({
-		color: "#643263", // accepts rgba(), or #hex
-		callback: function(rgba, state, type) {
-			document.body.style.background = Color.Space(rgba, "RGBA>W3");
-		}
-	});
-	picker.element.style.top = 220 + "px";
-	picker.element.style.left = 270 + "px";
-	picker.toggle(true);
-	----------------------------------------------------
 	Color.Space.js – STRING, HEX, RGB, HSV, RGBA, HSVA, W3
 */
 
