@@ -36,7 +36,6 @@ $(function(){
 			less.modifyVars({
         '@baseColor': baseColor
       });
-      console.log(baseColor);
 		}
 	});
 });
