@@ -207,9 +207,9 @@
 
 <span class="comment">// Split Complementary</span>
   <span class="var">@distance2</span>: <span class="value">80</span>; <span class="comment">// Degrees between the two complementary colors</span>
-  <span class="var">@splitComp1</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, ((360 - <span class="var">@distance2</span>) / <span class="value">2</span>));
+  <span class="var">@splitComp1</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, ((<span class="value">360</span> - <span class="var">@distance2</span>) / <span class="value">2</span>));
   <span class="var">@splitComp2</span>: <span class="var">@baseColor</span>;
-  <span class="var">@splitComp3</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (((360 - <span class="var">@distance2</span>) / <span class="value">2</span>) * <span class="value">-1</span>));
+  <span class="var">@splitComp3</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (((<span class="value">360</span> - <span class="var">@distance2</span>) / <span class="value">2</span>) * <span class="value">-1</span>));
 
 <span class="comment">// Clash</span>
   <span class="var">@angle</span>: <span class="value">45</span>; <span class="comment">// Angle formed at base of isosceles triangle</span>
