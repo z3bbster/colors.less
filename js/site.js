@@ -4,13 +4,13 @@ $(function(){
   
   var baseColor;
   
-	var getParams = function(){
-  	var params = [];
-  	$('input.param').each(function(){
-    	var $this = $(this);
-    	params.push($this.val());
-  	})	  
-	  var lessVars = {
+  var getParams = function(){
+    var params = [];
+    $('input.param').each(function(){
+      var $this = $(this);
+      params.push($this.val());
+    })
+    var lessVars = {
       '@baseColor': baseColor,
       '@difference': params[0] + '%',
       '@distance1': params[1],
@@ -22,8 +22,8 @@ $(function(){
       '@distance6': params[7]
     };
     return lessVars;
-	};
-	
+  };
+
   var paramListener = function(){
     lessVars = getParams();
     less.modifyVars(lessVars);
@@ -32,7 +32,7 @@ $(function(){
   $('input.param').on('keyup',paramListener);
 
   picker = new Color.Picker({
-    color: "#FD00FF", // accepts rgba(), or #hex
+    color: "#2865CC", // accepts rgba(), or #hex
     display: true,
     size: 200,
     callback: function(rgba, state, type) {
