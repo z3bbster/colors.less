@@ -10,6 +10,7 @@ $(function(){
       var $this = $(this);
       params.push($this.val());
     })
+
     var lessVars = {
       '@baseColor': baseColor,
       '@difference': params[0] + '%',
@@ -21,6 +22,18 @@ $(function(){
       '@distance5': params[6],
       '@distance6': params[7]
     };
+
+    // Update <code> block
+    $('.baseColor').text(baseColor),
+    $('.difference').text(params[0] + '%'),
+    $('.distance1').text(params[1]),
+    $('.distance2').text(params[2]),
+    $('.angle').text(params[3]),
+    $('.distance3').text(params[4]),
+    $('.distance4').text(params[5]),
+    $('.distance5').text(params[6]),
+    $('.distance6').text(params[7]);
+
     return lessVars;
   };
 
