@@ -19,7 +19,7 @@
         s.parentNode.insertBefore(t, s);
       })();
     </script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="js/Color.Picker.Classic.js" type="text/javascript"></script> 
     <script src="js/Color.Space.js" type="text/javascript"></script> 
     <script src="js/less.js" type="text/javascript"></script>
@@ -185,10 +185,10 @@
         
         <h3>The Code</h3>
         <code class="block">
-<span class="var">@baseColor</span>: <span class="value">#FD00FF</span>;
+<span class="var">@baseColor</span>: <span class="value baseColor">#2865CC</span>;
 
 <span class="comment">// Shades</span>
-  <span class="var">@difference</span>: <span class="value">10%</span>; <span class="comment">// Difference (in perecent) between each shade</span>
+  <span class="var">@difference</span>: <span class="value difference">10%</span>; <span class="comment">// Difference (in perecent) between each shade</span>
   <span class="var">@shade1</span>: <span class="fn">lighten</span>(<span class="var">@baseColor</span>, (<span class="var">@difference</span> * <span class="value">2</span>));
   <span class="var">@shade2</span>: <span class="fn">lighten</span>(<span class="var">@baseColor</span>, <span class="var">@difference</span>);
   <span class="var">@shade3</span>: <span class="var">@baseColor</span>;
@@ -196,7 +196,7 @@
   <span class="var">@shade5</span>: <span class="fn">darken</span>(<span class="var">@baseColor</span>, (<span class="var">@difference</span> * <span class="value">2</span>));
     
 <span class="comment">// Analgous</span>
-  <span class="var">@distance1</span>: <span class="value">10</span>; <span class="comment">// Degrees between each analgous color</span>
+  <span class="var">@distance1</span>: <span class="value distance1">10</span>; <span class="comment">// Degrees between each analgous color</span>
   <span class="var">@analgous1</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="var">@distance1</span> * <span class="value">2</span>));
   <span class="var">@analgous2</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, <span class="var">@distance1</span>);
   <span class="var">@analgous3</span>: <span class="var">@baseColor</span>;
@@ -208,32 +208,32 @@
   <span class="var">@complementary2</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, <span class="value">180</span>);
 
 <span class="comment">// Split Complementary</span>
-  <span class="var">@distance2</span>: <span class="value">80</span>; <span class="comment">// Degrees between the two complementary colors</span>
+  <span class="var">@distance2</span>: <span class="value distance2">80</span>; <span class="comment">// Degrees between the two complementary colors</span>
   <span class="var">@splitComp1</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, ((<span class="value">360</span> - <span class="var">@distance2</span>) / <span class="value">2</span>));
   <span class="var">@splitComp2</span>: <span class="var">@baseColor</span>;
   <span class="var">@splitComp3</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (((<span class="value">360</span> - <span class="var">@distance2</span>) / <span class="value">2</span>) * <span class="value">-1</span>));
 
 <span class="comment">// Clash</span>
-  <span class="var">@angle</span>: <span class="value">45</span>; <span class="comment">// Angle formed at base of isosceles triangle</span>
+  <span class="var">@angle</span>: <span class="value angle">45</span>; <span class="comment">// Angle formed at base of isosceles triangle</span>
   <span class="var">@clash1</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="var">@angle</span> * <span class="value">-2</span>));
   <span class="var">@clash2</span>: <span class="var">@baseColor</span>;
   <span class="var">@clash3</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="var">@angle</span> * <span class="value">2</span>));
   
 <span class="comment">// Triadic</span>
-  <span class="var">@distance3</span>: <span class="value">120</span>; <span class="comment">// Degrees between the two new colors</span>
+  <span class="var">@distance3</span>: <span class="value distance3">120</span>; <span class="comment">// Degrees between the two new colors</span>
   <span class="var">@triad1</span>: <span class="var">@baseColor</span>;
   <span class="var">@triad2</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="value">180</span> - (<span class="var">@distance3</span> * <span class="value">0.5</span>)));
   <span class="var">@triad3</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="value">180</span> + (<span class="var">@distance3</span> * <span class="value">0.5</span>)));
   
 <span class="comment">// Tetradic</span>
-  <span class="var">@distance4</span>: <span class="value">90</span>; <span class="comment">// Degrees between two closest colors</span>
+  <span class="var">@distance4</span>: <span class="value distance4">90</span>; <span class="comment">// Degrees between two closest colors</span>
   <span class="var">@tetrad1</span>: <span class="var">@baseColor</span>;
   <span class="var">@tetrad2</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, <span class="var">@distance4</span>);
   <span class="var">@tetrad3</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, <span class="value">180</span>);
   <span class="var">@tetrad4</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="value">180</span> + <span class="var">@distance4</span>));
   
 <span class="comment">// Five tone</span>
-  <span class="var">@distance5</span>: <span class="value">30</span>; <span class="comment">// Degrees between the 4 analgous colors</span>
+  <span class="var">@distance5</span>: <span class="value distance5">30</span>; <span class="comment">// Degrees between the 4 analgous colors</span>
   <span class="var">@5tone1</span>: <span class="var">@baseColor</span>;
   <span class="var">@5tone2</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="value">180</span> - (<span class="var">@distance5</span> * <span class="value">1.5</span>)));
   <span class="var">@5tone3</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="value">180</span> - (<span class="var">@distance5</span> * <span class="value">0.5</span>)));
@@ -241,7 +241,7 @@
   <span class="var">@5tone5</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, (<span class="value">180</span> + (<span class="var">@distance5</span> * <span class="value">1.5</span>)));
   
 <span class="comment">// Six tone</span>
-  <span class="var">@distance6</span>: <span class="value">20</span>; <span class="comment">// Distance between the colors of each analgous pair</span>
+  <span class="var">@distance6</span>: <span class="value distance6">20</span>; <span class="comment">// Distance between the colors of each analgous pair</span>
   <span class="comment">// Pair 1</span>
   <span class="var">@6tone1</span>: <span class="var">@baseColor</span>;
   <span class="var">@6tone2</span>: <span class="fn">spin</span>(<span class="var">@baseColor</span>, <span class="var">@distance6</span>);
