@@ -1,0 +1,31 @@
+{
+  "name": "colors.less",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Create color schemes with LESS",
+  "homepage": "http://jimmyking.me/colors.less/",
+  "author": "Jimmy King <hello@jimmyking.me> (http://jimmyking.me)",
+  "maintainers": [
+    "Jimmy King <hello@jimmyking.me> (https://github.com/jking90)"
+  ],
+  "contributors": [
+    "Jimmy King <hello@jimmyking.me> (https://github.com/jking90)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jking90/colors.less.git"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.2.x",
+    "docpad": "6.21.x"
+  },
+  "dependencies": {
+    "docpad": "6.21.x",
+    "docpad-plugin-coffeekup": "2.x",
+    "docpad-plugin-coffeescript": "~2.2.0",
+    "docpad-plugin-less": "2.x",
+    "docpad-plugin-ghpages": "2.x"
+  },
+  "main": "node_modules/docpad/bin/docpad-server"
+}
