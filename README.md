@@ -1,5 +1,7 @@
 # Demo site for colors.less
 
-To run locally: `docpad run`
+setup: `npm install`
 
-To deploy: `docpad deploy ghpages`
+run locally: `docpad run`
+
+deploy: `docpad deploy ghpages`
